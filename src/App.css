@@ -1,38 +1,237 @@
-.App {
-  text-align: center;
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+  background-size: 200% 200%;
+  animation: backgroundAnimation 10s ease infinite;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Search bar styling */
+.search-bar {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Accordion styling */
+.accordion-item {
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 15px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.accordion-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.accordion-content {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+/* Details layout */
+.celebrity-details {
+  margin-bottom: 15px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.detail-item {
+  font-size: 16px;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.description p {
+  margin: 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.save-btn {
+  background-color: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Edit mode layout */
+.celebrity-edit {
+  margin-bottom: 15px;
+}
+
+.edit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.edit-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-item label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.edit-item input,
+.edit-item select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-description {
+  margin-top: 10px;
+}
+
+.edit-description label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.edit-description textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+
+/* General style for the accordion item */
+.accordion-item {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Shadow effect on focus or hover */
+.accordion-item:focus-within,
+.accordion-item:hover {
+  box-shadow: 0 0 10px rgba(51, 122, 228, 0.973);
+}
+
+/* Style for the buttons to add shadow on focus */
+button:focus,
+button:hover {
+  outline: none;
+  box-shadow: 0 0 6px rgba(162, 235, 248, 0.925);
+}
+
+/* Additional styles for the edit and delete buttons */
+.edit-btn,
+.delete-btn {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Shadow effect on edit and delete buttons on focus or hover */
+.edit-btn:focus,
+.edit-btn:hover,
+.delete-btn:focus,
+.delete-btn:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the text areas and inputs to show shadow on focus */
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
