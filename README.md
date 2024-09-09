@@ -1,46 +1,113 @@
-# Getting Started with Create React App
+# Celebrity Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Celebrity Manager** project! This application allows you to view and edit details of celebrities while hiding their public presence. You will be able to manage a list of celebrities using a user-friendly interface, with features including searching, viewing, editing, and deleting celebrity details.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. **User Interface**:
+   - The page is designed with a search bar and an accordion list of celebrities.
+   - The accordion expands the selected item and collapses others, toggling between open and closed states with `+` and `-` icons.
 
-### `npm start`
+2. **Search Functionality**:
+   - A search bar allows you to search the list by celebrity name.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. **Accordion Behavior**:
+   - Clicking an accordion item will expand it and collapse others.
+   - Clicking the same accordion again will collapse it.
+   - The `+` and `-` icons indicate whether an accordion is open or closed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. **Data Handling**:
+   - Fetch and display user data from a JSON file (editing of JSON file is not permitted).
+   - Calculate age based on the provided date of birth.
+   - Gender is managed via a dropdown menu with options (Male, Female, Transgender, Rather not say, Other).
+   - Country is a text field.
+   - Description is a text area.
 
-### `npm test`
+5. **Editing and Deleting**:
+   - **Edit Mode**:
+     - Edit details directly in the accordion.
+     - Editing is only allowed for adult users.
+     - Input validation:
+       - No text allowed in the age field.
+       - No numbers allowed in the nationality field.
+       - All fields must be filled.
+     - Save button is enabled only when changes are detected.
+     - Cancel button reverts changes to the last known state.
+     - Accordion cannot be opened while in edit mode.
+   - **Delete Mode**:
+     - Confirmation alert before deletion.
+     - User is deleted upon confirmation or left unchanged otherwise.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. **TypeScript** (optional but recommended):
+   - TypeScript can be used for better code quality and type safety.
 
-### `npm run build`
+## Project Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step 1: Clone Project and Install Required Packages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install Node.js version **v18.17.0** from the official Node.js website:
+   - Visit: [https://nodejs.org](https://nodejs.org)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Clone the repository and navigate to the project directory:
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
+   ```
 
-### `npm run eject`
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Step 2: Implement Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Search Bar**:
+   - Create a search bar component to filter the celebrity list.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. **Accordion Component**:
+   - Build an accordion component to display celebrity details.
+   - Implement the expand/collapse functionality with `+` and `-` icons.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Data Fetching**:
+   - Fetch the JSON file containing celebrity data.
+   - Calculate age based on the date of birth.
 
-## Learn More
+4. **Edit Mode**:
+   - Create forms for editing celebrity details.
+   - Implement validation rules and manage save/cancel functionality.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. **Delete Mode**:
+   - Implement delete functionality with a confirmation prompt.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Step 3: Run the Application
+
+Start the application with:
+```bash
+npm start
+```
+
+## Code Overview
+
+- **CSS Styling**: The provided CSS includes styling for the search bar, accordion, and form elements with shadow effects for enhanced visuals.
+- **React Components**: Components for the search bar, accordion, and editing functionality are implemented according to the requirements.
+
+## Screenshots
+
+### HomePage
+![image](https://github.com/user-attachments/assets/1d2ce3d6-5081-40df-ae43-a7a6da529737)
+
+### EditView
+![image](https://github.com/user-attachments/assets/60f06276-2cd8-4339-ab5f-c7cb210f767f)
+
+### Detailed View
+![image](https://github.com/user-attachments/assets/29905d46-8720-4268-8913-2506af4e3e13)
+
+### Deleted View
+![image](https://github.com/user-attachments/assets/3cfe8153-e736-4238-913a-ef6a62c3f954)
+
+## Notes
+
+- Ensure the application adheres to the provided design and functionality requirements.
+- Test thoroughly to confirm that all features work as expected, especially the validation and edit/delete modes.
+
+Happy coding!
